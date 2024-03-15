@@ -2,7 +2,7 @@ name: inkloodle-dev
 
 volumes:
   db_data:
-
+  moodle_data:
 
 services:
   webserver:
@@ -16,6 +16,7 @@ services:
       - ./assets/web/apache2_mailpit.conf:/etc/apache2/conf-enabled/apache2_mailpit.conf:ro
       - ./moodle/theme/edmo:/var/www/html/theme/edmo
       - ./moodle/blocks:/var/www/html/blocks
+      - moodle_data:/var/www/moodledata
     depends_on:
       - db
       - mailpit
