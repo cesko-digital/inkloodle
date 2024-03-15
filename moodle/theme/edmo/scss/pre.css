@@ -1,0 +1,19 @@
+:root {
+  --fontSize: 16px;
+  --transition: .5s;
+  --mainColor: [[setting:brandcolor]];
+  --mainColor2: [[setting:secondarycolor]];
+  --footerBG: [[setting:footer_bg]];
+  --optionalColor: #606060;
+  --whiteColor: #ffffff;
+  --blackColor: #221638;
+  --paragraphColor: #716c80;
+  --SparklingAppleColor: #72AE44;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px !important;
+  font-family: "Nunito", sans-serif !important;
+}/*# sourceMappingURL=pre.css.map */

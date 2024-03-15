@@ -1,0 +1,120 @@
+<div class="navbar-area {{output.edmo_is_siteadmin}}">
+    <div class="edmo-responsive-nav">
+        <div class="container">
+            <div class="edmo-responsive-menu">
+                {{#logo_visibility}}
+                    <div class="logo">
+                        <a href="{{{ config.wwwroot }}}/">
+                            {{#mobile_logo}}
+                                <img src="{{mobile_logo}}" alt="{{sitename}}"  {{#mobile_logo_styles}} style="{{{mobile_logo_styles}}}" {{/mobile_logo_styles}}>
+                            {{/mobile_logo}}
+
+                            {{^ mobile_logo }}
+                                <h2 {{#mobile_logo_styles}} style="{{{mobile_logo_styles}}}" {{/mobile_logo_styles}}>{{sitename}}</h2>
+                            {{/mobile_logo}}
+                        </a>
+                    </div>
+                {{/logo_visibility}}
+            </div>
+        </div>
+    </div>
+
+    <div class="edmo-nav">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light">
+                {{#logo_visibility}}
+                    <a class="navbar-brand" href="{{{ config.wwwroot }}}/">
+                        {{#main_logo}}
+                            <img src="{{main_logo}}" alt="{{sitename}}"  {{#logo_styles}} style="{{{logo_styles}}}" {{/logo_styles}}>
+                        {{/main_logo}}
+
+                        {{^ main_logo }}
+                            <h2  {{#logo_styles}} style="{{{logo_styles}}}" {{/logo_styles}}>{{sitename}}</h2>
+                        {{/main_logo}}
+                    </a>
+                {{/logo_visibility}}
+
+                <div class="collapse navbar-collapse mean-menu">
+                    {{#header_search_bar}}
+                        {{{edmo_globalsearch_navbar}}}
+                    {{/header_search_bar}}
+
+                    <ul id="menu-primary-menu" class="navbar-nav">
+                        <!-- custom_menu -->
+                        {{{ output.custom_menu }}}
+                    </ul>
+
+                    {{output.if_edmo_guest_user}}
+
+                    {{^ isloggedin}}
+                        {{#header_btn_text}}
+                            <div class="others-option d-flex align-items-center">
+                            
+                                <div class="option-item">
+                                {{#header_btn_url}}
+                                    <a href="{{header_btn_url}}" class="default-btn">
+                                {{/header_btn_url}}
+                                {{^ header_btn_url }}
+                                    <a href="{{ login_url }}" class="default-btn">
+                                {{/header_btn_url}}
+
+                                    <i class="{{header_btn_icon}}"></i>
+                                    {{header_btn_text}}<span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        {{/header_btn_text}}
+
+                    {{/isloggedin}}
+                </div>
+
+                {{#isloggedin}}
+                    {{> theme_edmo/edmo_navbar_user }}
+                {{/isloggedin}}
+            </nav>
+        </div>
+    </div>
+    <div class="others-option-for-responsive">
+        <div class="container">
+            <div class="dot-menu">
+                <div class="inner">
+                    <div class="circle circle-one"></div>
+                    <div class="circle circle-two"></div>
+                    <div class="circle circle-three"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="option-inner">
+                    {{#header_search_bar}}
+                        <div class="option-item">
+                            {{{edmo_globalsearch_navbar}}}
+                        </div>
+                    {{/header_search_bar}}
+
+                    {{^ isloggedin}}
+                        {{#header_btn_text}}
+                            <div class="option-item">
+                            {{#header_btn_url}}
+                                <a href="{{header_btn_url}}" class="default-btn">
+                            {{/header_btn_url}}
+                            {{^ header_btn_url }}
+                                <a href="{{ login_url }}" class="default-btn">
+                            {{/header_btn_url}}
+
+                                <i class="{{header_btn_icon}}"></i>
+                                {{header_btn_text}}<span></span>
+                                </a>
+                            </div>
+                        {{/header_btn_text}}
+                    {{/isloggedin}}
+
+                    {{#isloggedin}}
+                        <div class="option-item">
+                            {{> theme_edmo/edmo_navbar_user_mobile }}
+                        </div>
+                    {{/isloggedin}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

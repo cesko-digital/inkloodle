@@ -1,0 +1,28 @@
+<ul class="edmo-header-user-sec pull-right">
+    {{{ output.edit_switch }}}
+
+    {{{ output.navbar_plugin_output }}}
+    
+    {{#primarymoremenu}}
+        <li class="user_setting edmo-settings-nav">
+            <div class="dropdown">
+                <a class="notification-icon" href="{{{ config.wwwroot }}}/admin/search.php"><i class='icon bx bx-cog'></i></a>
+            </div>
+        </li>
+    {{/primarymoremenu}}
+
+    <li class="user_setting">
+        <div class="dropdown">
+            <a class="btn dropdown-toggle edmo-profile-menu" href="#" data-toggle="dropdown" aria-expanded="false"><img class="rounded-circle" src="{{{ user_profile_picture }}}" alt="{{{ user_username }}}"></a>
+            <div class="dropdown-menu" x-placement="top-start" style="position: absolute; transform: translate3d(-9px, -5px, 0px); left: 0px; will-change: transform;">
+            <div class="user_set_header">
+                <img class="float-left rounded-circle" src="{{{ user_profile_picture }}}" alt="{{{ profile_icon_username }}}">
+                <p>{{{ profile_icon_username }}} <br><span class="address">{{{ user_email }}}</span></p>
+            </div>
+            <div class="user_setting_content">
+                {{{ output.user_menu }}}
+            </div>
+            </div>
+        </div>
+    </li>
+</ul>

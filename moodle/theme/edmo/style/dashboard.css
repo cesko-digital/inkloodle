@@ -1,0 +1,101 @@
+.admin input[type=text], .admin textarea, .admin select, .admin .filemanager, .modal:not(.sign_up_modal) input[type=text], .modal:not(.sign_up_modal) textarea, .modal:not(.sign_up_modal) select, .modal:not(.sign_up_modal) .filemanager, #jump-to-activity, .message_container .iu_heading .candidate_revew_search_box input.form-control {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(221,221,221);
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 9%);
+}
+
+.admin input[type=text], .admin select, .modal:not(.sign_up_modal) input[type=text], .modal:not(.sign_up_modal) select, #jump-to-activity {
+    height: 50px;
+}
+
+.bootstrap-select .dropdown-toggle .filter-option {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: inherit;
+    padding-right: inherit;
+    padding-bottom: inherit;
+    padding-left: inherit;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+}
+
+.admin .btn-primary, .admin .btn-secondary, .admin .btn:not(.btn-link), .modal:not(.sign_up_modal) .btn-primary, .modal:not(.sign_up_modal) .btn-secondary, .format-remuiformat .course-content .cards .wdm-card-section .card-section-leftnav .btn, .format-remuiformat .course-content .cards .wdm-card-section .card-section-rightnav .btn, .message_container .iu_heading .candidate_revew_search_box .btn {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1;
+    padding: 14px 20px;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    background-color: #686c6e;
+    border-width: 2px;
+    border-color: #686c6e;
+    color: #fff;
+    -webkit-box-shadow: 0 1px 4px 0 rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,.3);
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 30%);
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+.admin .btn-primary:hover, .admin .btn-secondary:hover, .admin .btn:not(.btn-link):hover, .modal:not(.sign_up_modal) .btn-primary:hover, .modal:not(.sign_up_modal) .btn-secondary:hover, .btn-secondary:hover, .btn-primary:hover, .format-remuiformat .course-content .cards .wdm-card-section .card-section-leftnav .btn:hover, .format-remuiformat .course-content .cards .wdm-card-section .card-section-rightnav .btn:hover, .message_container .iu_heading .candidate_revew_search_box .btn:hover{
+    background-color: transparent;
+    border-color: #6c757d;
+    color: #6c757d;
+    -webkit-box-shadow: 0 1px 4px 0 rgb(0 0 0 / 0%);
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0);
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 0%);
+    text-decoration: none;
+}
+.ui_kit_select_search .btn.dropdown-toggle {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(221,221,221);
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 9%);
+    color: #495057;
+    height: 47px;
+}
+
+.dashboard_main_content input[type=text], .dashboard_main_content textarea, .dashboard_main_content select, .dashboard_main_content .filemanager, .modal:not(.sign_up_modal) input[type=text], .modal:not(.sign_up_modal) textarea, .modal:not(.sign_up_modal) select, .modal:not(.sign_up_modal) .filemanager, #jump-to-activity, .edmo-forum-top-selectors select, .message_container .iu_heading .candidate_revew_search_box input.form-control {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(221,221,221);
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 9%);
+}
+
+.dashboard_main_content input[type=text], .dashboard_main_content select, .modal:not(.sign_up_modal) input[type=text], .modal:not(.sign_up_modal) select, #jump-to-activity, .edmo-forum-top-selectors select {
+    height: 48px;
+}
+.mform .form-inline .form-control {
+    width: 100%;
+}
+.dashboard_main_content .filemanager, .modal:not(.sign_up_modal) .filemanager {
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.editor_atto {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(221,221,221);
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 9%);
+}
+.editor_atto .editor_atto_content {
+    border: none;
+}
+div.editor_atto_toolbar {
+    border: none;
+    background: #efefef;
+}

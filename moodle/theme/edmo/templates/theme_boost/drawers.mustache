@@ -1,0 +1,164 @@
+{{> theme_boost/head }}
+
+<body {{{ bodyattributes }}}>
+{{> core/local/toast/wrapper}}
+
+<div id="wrapper" class="edmo-page-wrapper">
+
+    {{> theme_boost/navbar }}
+
+    {{#courseindex}}
+        {{< theme_boost/drawer }}
+            {{$id}}theme_boost-drawers-courseindex{{/id}}
+            {{$drawerclasses}}drawer drawer-left {{#courseindexopen}}show{{/courseindexopen}}{{/drawerclasses}}
+            {{$drawercontent}}
+                {{{courseindex}}}
+            {{/drawercontent}}
+            {{$drawerpreferencename}}drawer-open-index{{/drawerpreferencename}}
+            {{$drawerstate}}show-drawer-left{{/drawerstate}}
+            {{$tooltipplacement}}right{{/tooltipplacement}}
+            {{$closebuttontext}}{{#str}}closecourseindex, core{{/str}}{{/closebuttontext}}
+        {{/ theme_boost/drawer}}
+    {{/courseindex}}
+
+    <div class="{{#courseindexopen}}show-drawer-left{{/courseindexopen}} drag-container">
+        <div class="drawer-toggles d-flex">
+            {{#courseindex}}
+                <div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
+                    <button
+                        class="btn icon-no-margin"
+                        data-toggler="drawers"
+                        data-action="toggle"
+                        data-target="theme_boost-drawers-courseindex"
+                        data-toggle="tooltip"
+                        data-placement="right"
+                        title="{{#str}}opendrawerindex, core{{/str}}"
+                    >
+                        <span class="sr-only">{{#str}}opendrawerindex, core{{/str}}</span>
+                        {{#pix}} t/index_drawer, moodle {{/pix}}
+                    </button>
+                </div>
+            {{/courseindex}}
+        </div>
+
+        {{^ output.if_home_pages}}
+            <div class="page-title-area">
+                <div class="container">
+                    <div class="page-title-content">
+                        {{output.if_home_pages}}
+
+                        {{{ output.navbar }}}
+                        <h2>{{{ pageheading }}}</h2>
+                    </div>
+                </div>
+
+                {{#banner_shape_image}}
+                    <div class="shape9"><img src="{{banner_shape_image}}" alt="{{sitename}}"></div>
+                {{/banner_shape_image}}
+            </div>
+        {{/output.if_home_pages}}
+
+        <div class="edmo-fullwidth-top" aria-label="{{#str}}blocks{{/str}}"">
+            {{{ blocks_fullwidth_top }}}
+        </div>
+
+        <div id="edmos-settings-menu-container" class="edmos-settings-menu-container">
+            <div id="edmo-settings-menu-inner">
+                {{#hasregionmainsettingsmenu}}
+                    <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
+                        <div> {{{ output.region_main_settings_menu }}} </div>
+                    </div>
+                {{/hasregionmainsettingsmenu}}
+            </div>
+        </div>
+
+        {{{ output.standard_top_of_body_html }}}
+
+        <div>
+            <div id="edmos-settings-menu-container2" class="edmos-settings-menu-container">
+                {{{ output.full_header }}}
+            </div>
+
+            {{#output.if_hide_page_bottom_content}}<div class="if_hide_page_bottom_content d-none">{{/output.if_hide_page_bottom_content}}
+                <div id="page" class="container d-print-block bottom-region-main-box">
+                    <div id="page-content" class="d-print-block">
+                        <div id="region-main-box">
+                            <div class="row">
+                                {{#hasblocks}}
+                                    <div class="col-lg-8">
+                                {{/hasblocks}}
+
+                                {{^ hasblocks }}
+                                    <div class="col-lg-12">
+                                {{/hasblocks}}
+
+                                    {{{ addblockbutton }}}
+                                    <div id="region-main" {{#hasblocks}}class="edmo-has-blocks"{{/hasblocks}} aria-label="{{#str}}content{{/str}}">
+
+                                        {{#hasregionmainsettingsmenu}}
+                                            <div class="region_main_settings_menu_proxy"></div>
+                                        {{/hasregionmainsettingsmenu}}
+
+                                        {{#has_blocks_above_content}}
+                                            {{{ blocks_above_content }}}
+                                        {{/has_blocks_above_content}}
+
+                                        <div class="edmo-main">
+                                            {{{ output.course_content_header }}}
+                                            
+                                            {{#output.if_blog}}
+                                                <div class="blog-area">
+                                                    <div class="row">
+                                            {{/output.if_blog}}
+
+                                                {{{ output.main_content }}}
+
+                                            {{#output.if_blog}}
+                                                    </div>
+                                                </div>
+                                            {{/output.if_blog}}
+
+                                            {{{ output.activity_navigation }}}
+                                            {{{ output.course_content_footer }}}
+                                        </div>
+
+                                        {{#has_blocks_below_content}}
+                                            {{{ blocks_below_content }}}
+                                        {{/has_blocks_below_content}}
+
+                                    </div>
+                                </div>
+                                {{#hasblocks}}
+                                    <div class="col-lg-4">
+                                        <div data-region="blocks-column edmo-sidebar-region" class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
+                                            {{{ sidepreblocks }}}
+                                        </div>
+                                    </div>
+                                {{/hasblocks}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{#output.if_hide_page_bottom_content}}</div>{{/output.if_hide_page_bottom_content}}
+
+            {{{ blocks_fullwidth_bottom }}}
+        </div>
+        {{> theme_boost/footer }}
+    </div>
+</div>
+
+{{{ output.standard_after_main_region_html }}}
+
+</body>
+</html>
+{{#js}}
+  M.util.js_pending('theme_boost/loader');
+  require(['theme_boost/loader'], function() {
+  M.util.js_complete('theme_boost/loader');
+  });
+  M.util.js_pending('theme_boost/drawer');
+  require(['theme_boost/drawer'], function(mod) {
+  mod.init();
+  M.util.js_complete('theme_boost/drawer');
+  });
+{{/js}}

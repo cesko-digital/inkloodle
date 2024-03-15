@@ -1,0 +1,93 @@
+{{> theme_boost/head }}
+
+<body {{{ bodyattributes }}}>
+{{> core/local/toast/wrapper}}
+
+    <div id="wrapper">
+
+        {{> theme_boost/navbar }}
+
+        {{{ output.standard_top_of_body_html }}}
+
+        {{#dashboard_left_side}}
+            <section class="dashboard_sidebar dn-1199">
+                <div class="dashboard_sidebars">
+                    <div class="user_board">
+                        <div class="dashbord_nav_list">
+                            {{{ output.user_menu }}}
+                        </div>
+                        <div class="pl30 pr30">
+                            {{{ leftblocks }}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="our-dashbord dashbord">
+        {{/dashboard_left_side}}
+        
+        {{^ dashboard_left_side}}
+            <div class="our-dashbord dashbord dashbord-blank-left">
+        {{/dashboard_left_side}}
+            <div class="page-title-area">
+                <div class="container">
+                    <div class="page-title-content">
+                        {{output.if_home_pages}}
+
+                        {{{ output.navbar }}}
+                        <h2>{{{ pageheading }}}</h2>
+                    </div>
+                </div>
+
+                {{#banner_shape_image}}
+                    <div class="shape9"><img src="{{banner_shape_image}}" alt="{{sitename}}"></div>
+                {{/banner_shape_image}}
+            </div>
+            
+            <div class="dashboard_main_content">
+                <div class="container-fluid">
+                    <div class="main_content_container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                {{{ output.full_header }}}
+
+                                {{{ output.region_main_settings_menu }}}
+                                {{#has_blocks_above_content}}
+                                    {{{ blocks_above_content }}}
+                                {{/has_blocks_above_content}}
+                                {{{ output.course_content_header }}}
+                                {{{ output.main_content }}}
+                                {{{ output.activity_navigation }}}
+                                {{{ output.course_content_footer }}}
+                                {{#has_blocks_below_content}}
+                                    {{{ blocks_below_content }}}
+                                {{/has_blocks_below_content}}
+                            </div>
+                            <div class="col-lg-4">
+                                {{#hasblocks}}
+                                    <div class="edmo-sidebar-region" aria-label="{{#str}}blocks{{/str}}">
+                                        {{{ sidepreblocks }}}
+                                    </div>
+                                {{/hasblocks}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> theme_boost/footer }}
+        </div>
+    </div>
+    {{{ output.standard_after_main_region_html }}}
+
+</body>
+</html>
+{{#js}}
+  M.util.js_pending('theme_boost/loader');
+  require(['theme_boost/loader'], function() {
+  M.util.js_complete('theme_boost/loader');
+  });
+  M.util.js_pending('theme_boost/drawer');
+  require(['theme_boost/drawer'], function(mod) {
+  mod.init();
+  M.util.js_complete('theme_boost/drawer');
+  });
+{{/js}}
