@@ -17,6 +17,8 @@ if (empty($_SERVER["HTTP_HOST"])) {
     $_SERVER["HTTP_HOST"] = "localhost";
 }
 
+$CFG->reverseproxy = true;
+$CFG->sslproxy = 1;
 $CFG->wwwroot = getenv("MOODLE_DOCKER_WEB_HOST");
 $port = getenv("MOODLE_DOCKER_WEB_PORT");
 if (!empty($port)) {
