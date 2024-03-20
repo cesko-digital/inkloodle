@@ -6,7 +6,7 @@ $CFG = new stdClass();
 
 $CFG->dbtype = getenv("MOODLE_DOCKER_DBTYPE");
 $CFG->dblibrary = "native";
-$CFG->dbhost = "db";
+$CFG->dbhost = getenv("MOODLE_DOCKER_DBHOST");
 $CFG->dbname = getenv("MOODLE_DOCKER_DBNAME");
 $CFG->dbuser = getenv("MOODLE_DOCKER_DBUSER");
 $CFG->dbpass = getenv("MOODLE_DOCKER_DBPASS");
@@ -17,8 +17,7 @@ if (empty($_SERVER["HTTP_HOST"])) {
     $_SERVER["HTTP_HOST"] = "localhost";
 }
 
-$host = getenv("MOODLE_DOCKER_WEB_HOST");
-$CFG->wwwroot = "http://{$host}";
+$CFG->wwwroot = getenv("MOODLE_DOCKER_WEB_HOST");
 $port = getenv("MOODLE_DOCKER_WEB_PORT");
 if (!empty($port)) {
     // Extract port in case the format is bind_ip:port.
