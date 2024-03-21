@@ -1,0 +1,5 @@
+moodle.cesko.dev
+
+reverse_proxy webserver {
+    header_up -Host
+}

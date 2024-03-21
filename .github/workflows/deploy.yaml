@@ -72,4 +72,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy
-        run: ssh inkloodle 'ls'
+        run: |
+          sed -i.bak "s|IMAGE_TAG|${{ github.sha }}|g" docker-compose.prod.yaml
+          scp docker-compose.prod.yaml inkloodle:inkloodle/docker-compose.yaml
+          scp config/Caddyfile inkloodle:inkloodle/config/Caddyfile
