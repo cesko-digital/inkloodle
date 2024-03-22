@@ -28,7 +28,6 @@ services:
       MOODLE_DOCKER_DBPASS: m@0dl3ing
       MOODLE_DOCKER_DBTYPE: mariadb
       MOODLE_DOCKER_DBUSER: moodle
-      MOODLE_DOCKER_WEB_HOST: localhost
       MOODLE_DOCKER_WEB_PORT: 127.0.0.1:8000
   db:
     image: mariadb:10.7
