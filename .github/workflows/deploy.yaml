@@ -76,3 +76,4 @@ jobs:
           sed -i.bak "s|IMAGE_TAG|${{ github.sha }}|g" docker-compose.prod.yaml
           scp docker-compose.prod.yaml inkloodle:inkloodle/docker-compose.yaml
           scp config/Caddyfile inkloodle:inkloodle/config/Caddyfile
+          ssh inkloodle "cd inkloodle && docker compose pull && docker compose up -d"
